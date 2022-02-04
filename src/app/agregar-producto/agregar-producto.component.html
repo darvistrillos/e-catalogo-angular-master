@@ -1,0 +1,28 @@
+<mat-card>
+  <h1>Agregar producto</h1>
+  <p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="productoModel.title"
+             type="text"
+             placeholder="Nombre">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <textarea rows="10" matInput [(ngModel)]="productoModel.description"
+                placeholder="Descripción"></textarea>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="productoModel.price"
+             type="number"
+             placeholder="Precio">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <app-loading-button [cargando]="cargando" texto="Guardar" (click)="guardar()"></app-loading-button>
+    <a routerLink="/productos" mat-raised-button color="primary" style="margin-left: 10px">Volver</a>
+  </p>
+</mat-card>
